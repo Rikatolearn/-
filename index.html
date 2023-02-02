@@ -4,37 +4,270 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>个人网站首页</title>
+    <link href="https://fonts.googlefonts.cn/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googlefonts.cn/css?family=Roboto" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color:#f0f0f0;
+        }
+        * {
+            /* border: 1px solid black; */
+        }
+        .shadow {
+            box-shadow: rgb(0 0 0 / 7%) 0px 1px 3px -1px,rgb(0 0 0 / 12%) 1px 1px 4px -1px;
+        }
+        .flex {
+            display: flex;
+        }
+        .flex1 {
+            flex: 1;
+        }
+        .column {
+            flex-direction: column;
+        }
+        .row {
+            flex-direction: row;
+        }
+        .white {
+            background-color: #fff;
+        }
+        .green {
+            background-color: #9c9;
+        }
+        .articleBlogMargin {
+            margin-top: 20px;
+        }
+        .noScrollBar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 </head>
-<body>
-    <div style="
-        background-color: #f1f1f1;
-        text-align: center;
-        padding: 40px;
-    ">
-        <img src="https://images.unsplash.com/photo-1606041971133-7fedafcab553?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGNhdHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=600&q=60" alt="profile" width="80px" height="80px">
+<body class="flex">
+    <!-- 侧边栏 -->
+    <div style="width: 260px;" class="sidebar white shadow">
+            <!-- 头像栏 -->
+            <div style="
+            align-items: center;
+            justify-content: flex-start;
+            height: 480px;
+            background-color: #f9f9f9;
+            "
+            class="flex column shadow">
+                <img 
+                style="margin-top: 200px;"
+                src="https://images.unsplash.com/photo-1606041971133-7fedafcab553?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGNhdHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=600&q=60" alt="profile" width="80px" height="80px">
+                <div style="
+                margin-top: 20px;
+                font: bold 16px 'Roboto',sans-serif;
+                color: #4e4e4e;"
+                class="div">R.K.</div>
+            </div>
+            <!-- 导航栏 -->
+            <div class="">
+                <div class="nav" style="
+                border-bottom: 1px dashed #cfcfcf;
+                height: 50px; 
+                padding: 5px 20px 0;
+                font-size: 16px;
+                line-height: 40px;
+                ">文章标签</div>
+                <div class="nav" style="
+                border-bottom: 1px dashed #cfcfcf;
+                height: 50px;
+                padding: 5px 20px 0;
+                font-size: 16px;
+                line-height: 40px;
+                ">阅读排行</div>
+            </div>
     </div>
-    <div style="
-        max-width: 700px;
-        margin: 30px auto;
-        padding: 15px;
-        line-height: 1.7;
-    ">
-        <h1>To be continued...</h1>
-        <p>技术博客</p>
-        <p>自恋心理学笔记</p>
-        <p>数字极简</p>
-        <p>Bucket List</p>
-        <p>零碎感悟</p>
-    </div>
-    <div style="
-        background-color: #f1f1f1;
-        text-align: center;
-        padding: 40px;
-        font-size: 12px;
-    ">
-        <p>我的个人小站</p>
-        <a href="#">友情链接</a>
+    <!-- 主区域 -->
+    <div class="flex column" style="flex:auto; overflow:auto">
+        <!-- 头部栏 -->
+        <header style="flex-shrink: 0; height: 480px;" id="header" class="green flex column">
+            <h1 style="
+            margin-top: 220px;
+            text-align: center;
+            font: 700 normal 60px 'Lobster',sans-serif;
+            color: white;
+            ">
+            Born to Be Weird
+            </h1>
+            <p style="
+            margin: 16px 0 100px;
+            text-align: center;
+            font: 20px 'Roboto',sans-serif;
+            color: #fff;">
+            前端学习，自律与效率，荐书，其他......
+            </p>
+        </header>
+        <!-- 内容区-->
+        <div id="content" class="flex column">
+            <!-- banner图片 -->
+            <div id="banner">
+            </div>
+            <!-- 文章区 -->
+            <div style="
+            /* margin-top: 20px; */
+            align-items:center;
+            flex-wrap: wrap;"
+            id="blogs" class="flex column">
+                <!-- 文章块1 -->
+                <div style="
+                height: 360px;
+                width: 860px;
+                padding: 25px;
+                background-color: #fff;" 
+                class="flex column articleBlogMargin shadow"
+                id="post">
+                    <div class="postTitle" style="
+                    height: 120px;
+                    font: 42px 'Open Sans';
+                    color:#4a4a4a;">万字泣血解析割韭菜内情，程序员别老想着做副业</div>
+
+                    <div class="postMeta" style="
+                    margin-top: 10px;
+                    font-size: 14px;
+                    color: #888;
+                    ">作者：程序员济癫 10月31，2022 | 此处为演示文本，版权归原作者所有</div>
+
+                    <div class="content flex" style="flex-direction: row; justify-content:space-between;">
+                        <div class="desc flex" style="
+                        margin-top: 25px;
+                        width: 480px;
+                        height: 200px;
+                        font-size: 17px;
+                         color:#3a4145;
+                         ">最近有准备一篇干货，但想了想还是先放放，眼看年关将近，写点其他对大家有用的内容。
+                        今年见了不少人被割韭菜，下半年尤为严重，这种情形甚至在技术行业蔓延，令人深感大环境的复杂变化，以及诸多同行对工作活的紧张与紧迫感，弥漫着一股压抑的氛围。  
+                        所以我写这篇文章情真意切，希望大家不要做被割韭菜的人，副业业可以适当了解、接触，但作为程序员请千万不要老想着副业。</div>
+                        <div class="images flex"
+                        >
+                            <img src="https://img2022.cnblogs.com/blog/1755845/202210/1755845-20221031103546789-1095369806.png" alt="" referrerpolicy="no-referrer"
+                            style="width:330px;height:210px;">
+                        </div>
+                    </div>
+                </div>
+                <!-- 文章块2 -->
+                <div style="
+                height: 360px;
+                width: 860px;
+                padding: 25px;
+                background-color: #fff;" 
+                class="flex column articleBlogMargin shadow"
+                id="post">
+                    <div class="postTitle" style="
+                    height: 120px;
+                    font: 42px 'Open Sans';
+                    color:#4a4a4a;">万字泣血解析割韭菜内情，程序员别老想着做副业</div>
+
+                    <div class="postMeta" style="
+                    margin-top: 10px;
+                    font-size: 14px;
+                    color: #888;
+                    ">作者：程序员济癫 10月31，2022 | 此处为演示文本，版权归原作者所有</div>
+
+                    <div class="content flex" style="flex-direction: row; justify-content:space-between;">
+                        <div class="desc flex" style="
+                        margin-top: 25px;
+                        width: 480px;
+                        height: 200px;
+                        font-size: 17px;
+                         color:#3a4145;
+                         ">最近有准备一篇干货，但想了想还是先放放，眼看年关将近，写点其他对大家有用的内容。
+                        今年见了不少人被割韭菜，下半年尤为严重，这种情形甚至在技术行业蔓延，令人深感大环境的复杂变化，以及诸多同行对工作活的紧张与紧迫感，弥漫着一股压抑的氛围。  
+                        所以我写这篇文章情真意切，希望大家不要做被割韭菜的人，副业业可以适当了解、接触，但作为程序员请千万不要老想着副业。</div>
+                        <div class="images flex"
+                        >
+                            <img src="https://img2022.cnblogs.com/blog/1755845/202210/1755845-20221031103546789-1095369806.png" alt="" referrerpolicy="no-referrer"
+                            style="width:330px;height:210px;">
+                        </div>
+                    </div>
+                </div>
+                <!-- 文章块3 -->
+                <div style="
+                height: 360px;
+                width: 860px;
+                padding: 25px;
+                background-color: #fff;" 
+                class="flex column articleBlogMargin shadow"
+                id="post">
+                    <div class="postTitle" style="
+                    height: 120px;
+                    font: 42px 'Open Sans';
+                    color:#4a4a4a;">万字泣血解析割韭菜内情，程序员别老想着做副业</div>
+
+                    <div class="postMeta" style="
+                    margin-top: 10px;
+                    font-size: 14px;
+                    color: #888;
+                    ">作者：程序员济癫 10月31，2022 | 此处为演示文本，版权归原作者所有</div>
+
+                    <div class="content flex" style="flex-direction: row; justify-content:space-between;">
+                        <div class="desc flex" style="
+                        margin-top: 25px;
+                        width: 480px;
+                        height: 200px;
+                        font-size: 17px;
+                         color:#3a4145;
+                         ">最近有准备一篇干货，但想了想还是先放放，眼看年关将近，写点其他对大家有用的内容。
+                        今年见了不少人被割韭菜，下半年尤为严重，这种情形甚至在技术行业蔓延，令人深感大环境的复杂变化，以及诸多同行对工作活的紧张与紧迫感，弥漫着一股压抑的氛围。  
+                        所以我写这篇文章情真意切，希望大家不要做被割韭菜的人，副业业可以适当了解、接触，但作为程序员请千万不要老想着副业。</div>
+                        <div class="images flex"
+                        >
+                            <img src="https://img2022.cnblogs.com/blog/1755845/202210/1755845-20221031103546789-1095369806.png" alt="" referrerpolicy="no-referrer"
+                            style="width:330px;height:210px;">
+                        </div>
+                    </div>
+                </div>
+                <!-- 文章块4 -->
+                <div style="
+                height: 360px;
+                width: 860px;
+                padding: 25px;
+                background-color: #fff;" 
+                class="flex column articleBlogMargin shadow"
+                id="post">
+                    <div class="postTitle" style="
+                    height: 120px;
+                    font: 42px 'Open Sans';
+                    color:#4a4a4a;">万字泣血解析割韭菜内情，程序员别老想着做副业</div>
+
+                    <div class="postMeta" style="
+                    margin-top: 10px;
+                    font-size: 14px;
+                    color: #888;
+                    ">作者：程序员济癫 10月31，2022 | 此处为演示文本，版权归原作者所有</div>
+
+                    <div class="content flex" style="flex-direction: row; justify-content:space-between;">
+                        <div class="desc flex" style="
+                        margin-top: 25px;
+                        width: 480px;
+                        height: 200px;
+                        font-size: 17px;
+                         color:#3a4145;
+                         ">最近有准备一篇干货，但想了想还是先放放，眼看年关将近，写点其他对大家有用的内容。
+                        今年见了不少人被割韭菜，下半年尤为严重，这种情形甚至在技术行业蔓延，令人深感大环境的复杂变化，以及诸多同行对工作活的紧张与紧迫感，弥漫着一股压抑的氛围。  
+                        所以我写这篇文章情真意切，希望大家不要做被割韭菜的人，副业业可以适当了解、接触，但作为程序员请千万不要老想着副业。</div>
+                        <div class="images flex"
+                        >
+                            <img src="https://img2022.cnblogs.com/blog/1755845/202210/1755845-20221031103546789-1095369806.png" alt="" referrerpolicy="no-referrer"
+                            style="width:330px;height:210px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 分页 -->
+            <nav class="pagination-wrapper"></nav>
+        </div>
+        <!-- footer -->
+        <footer class="site-footer flex" style="margin:0 auto;">
+                <div class="site-info" style="height: 100px; line-height: 100px;">
+                        © Copyright 2023 Born to Be Weird
+                </div>
+        </footer>
     </div>
 </body>
 </html>
